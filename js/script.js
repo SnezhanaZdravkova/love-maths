@@ -11,15 +11,15 @@ document.addEventListener("DOMContentLoaded", function(){
                 let gameType = this.getAttribute("data-type");
                 runGame(gameType);
             }
-        })
+        });
     }
     document.getElementById("answer-box").addEventListener("keydown", function(event){
        if(event.key === "Enter"){
         checkAnswer();
        }
-    })
+    });
     runGame("addition");
-})
+});
 
 /**
  * The main game "loop", called when the script is first loaded
@@ -32,7 +32,7 @@ function runGame(gameType){
     let num1 = Math.floor(Math.random() *25) + 1;
     let num2 = Math.floor(Math.random() *25) + 1;
     if(gameType === "addition"){
-        displayAdditionQuestion(num1, num2)
+        displayAdditionQuestion(num1, num2);
     }else if(gameType === "multiply"){
         displayMultiplyQuestion(num1, num2);
     }else if(gameType === "subtract"){
@@ -81,9 +81,9 @@ function calculateCorrectAnswer(){
     return[operand1 / operand2, "division"];
    }else{
     alert(`Unimplemented operator ${operator}`);
-    trow`Unimplemented operator ${operator}. Aborting!`
+    trow`Unimplemented operator ${operator}. Aborting!`;
    }
-};
+}
 
 /**
  * Gets the current score from the DOM and increments it by 1
